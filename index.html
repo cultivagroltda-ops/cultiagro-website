@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Empresa de importação e exportação de grãos e alimentos. Soluções em logística, qualidade e comércio internacional.">
+  <meta name="keywords" content="importação, exportação, grãos, alimentos, agronegócio, logística, comércio internacional">
+  <title>Cultiagro • Importação & Exportação de Grãos e Alimentos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#FAF7F2;
+      --earth-1:#8B5E3C; /* marrom do logo */
+      --earth-2:#A68A6A; /* marrom claro da espiga */
+      --green-1:#4A7C3F; /* verde do logo */
+      --green-2:#6FA66F; /* verde médio */
+      --accent:#D9C7A6; /* tons terrosos claros */
+      --muted:#6B6B6B;
+      --container:1200px;
+      --shadow-light: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-medium: 0 8px 30px rgba(0,0,0,0.08);
+      --shadow-heavy: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);color:#1b1b1b;line-height:1.6;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none;transition:all 0.3s ease}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,rgba(217,199,166,0.9),rgba(255,255,255,0.95));
+      backdrop-filter:blur(10px);
+      box-shadow:var(--shadow-light);
+      position:sticky;top:0;z-index:50;
+      transition:all 0.3s ease;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:50px;height:50px;border-radius:12px;
+      background:linear-gradient(135deg,var(--green-1),var(--earth-1));
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:18px;
+      box-shadow:var(--shadow-light);
+    }
+    .brand-text{
+      font-weight:700;font-size:20px;color:var(--earth-1);
+    }
+    .brand-subtitle{
+      font-size:12px;color:var(--muted);margin-top:2px;
+    }
+    nav ul{display:flex;gap:24px;align-items:center;margin:0;padding:0;list-style:none}
+    nav ul li a{
+      padding:8px 16px;border-radius:8px;font-weight:500;
+      transition:all 0.3s ease;
+    }
+    nav ul li a:hover{
+      background:rgba(47,107,58,0.1);color:var(--green-1);
+    }
+    .cta{
+      background:var(--green-1);color:white;padding:12px 20px;
+      border-radius:10px;font-weight:600;
+      box-shadow:var(--shadow-light);
+      transition:all 0.3s ease;
+    }
+    .cta:hover{
+      background:var(--green-2);transform:translateY(-2px);
+      box-shadow:var(--shadow-medium);
+    }
+    .menu-toggle{display:none;border:0;background:none;font-size:24px;color:var(--earth-1)}
+
+    /* Hero */
+    .hero{
+      padding:80px 0;display:grid;grid-template-columns:1fr 500px;
+      gap:60px;align-items:center;min-height:70vh;
+    }
+    .hero-left h1{
+      font-size:48px;margin:0 0 20px;color:var(--earth-1);
+      font-weight:700;line-height:1.2;
+    }
+    .hero-left p{
+      color:var(--muted);margin:0 0 30px;font-size:18px;
+      line-height:1.6;
+    }
+    .hero-cta{display:flex;gap:16px;margin-bottom:40px}
+    .btn-primary{
+      background:var(--green-1);color:white;padding:16px 24px;
+      border-radius:12px;font-weight:600;font-size:16px;
+      box-shadow:var(--shadow-light);transition:all 0.3s ease;
+    }
+    .btn-primary:hover{
+      background:var(--green-2);transform:translateY(-2px);
+      box-shadow:var(--shadow-medium);
+    }
+    .btn-outline{
+      padding:16px 24px;border-radius:12px;
+      border:2px solid var(--earth-2);background:white;
+      font-weight:600;font-size:16px;
+      transition:all 0.3s ease;
+    }
+    .btn-outline:hover{
+      background:var(--earth-2);color:white;
+      transform:translateY(-2px);
+    }
+    .card-stats{display:flex;gap:16px;margin-top:30px}
+    .stat{
+      background:white;padding:20px;border-radius:16px;
+      box-shadow:var(--shadow-light);min-width:140px;
+      transition:all 0.3s ease;
+    }
+    .stat:hover{
+      transform:translateY(-4px);box-shadow:var(--shadow-medium);
+    }
+    .stat-number{font-weight:700;font-size:24px;color:var(--green-1)}
+    .stat-label{color:var(--muted);font-size:14px;margin-top:4px}
+    .hero-right{
+      border-radius:20px;overflow:hidden;
+      box-shadow:var(--shadow-heavy);
+      position:relative;
+    }
+    .hero-right img{
+      width:100%;height:400px;object-fit:cover;display:block;
+      transition:transform 0.3s ease;
+    }
+    .hero-right:hover img{transform:scale(1.05)}
+
+    /* Sections */
+    section{padding:80px 0}
+    h2.section-title{
+      font-size:36px;margin:0 0 20px;color:var(--earth-1);
+      font-weight:700;text-align:center;
+    }
+    .section-subtitle{
+      text-align:center;color:var(--muted);font-size:18px;
+      margin:0 0 60px;max-width:600px;margin-left:auto;margin-right:auto;
+    }
+    .grid{display:grid;gap:30px}
+
+    /* Services */
+    .services{grid-template-columns:repeat(3,1fr)}
+    .service{
+      background:white;padding:40px 30px;border-radius:20px;
+      box-shadow:var(--shadow-light);text-align:center;
+      transition:all 0.3s ease;position:relative;overflow:hidden;
+    }
+    .service::before{
+      content:'';position:absolute;top:0;left:0;right:0;
+      height:4px;background:linear-gradient(90deg,var(--green-1),var(--earth-1));
+    }
+    .service:hover{
+      transform:translateY(-8px);box-shadow:var(--shadow-heavy);
+    }
+    .service-icon{
+      width:80px;height:80px;border-radius:20px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:32px;margin:0 auto 20px;
+      box-shadow:var(--shadow-light);
+    }
+    .service h3{margin:0 0 15px;color:var(--earth-1);font-size:20px}
+    .service p{color:var(--muted);line-height:1.6}
+
+    /* Products */
+    .products{grid-template-columns:repeat(auto-fit,minmax(350px,1fr))}
+    .product{
+      background:white;border-radius:20px;overflow:hidden;
+      box-shadow:var(--shadow-light);transition:all 0.3s ease;
+    }
+    .product:hover{
+      transform:translateY(-8px);box-shadow:var(--shadow-heavy);
+    }
+    .product img{
+      width:100%;height:220px;object-fit:cover;display:block;
+      transition:transform 0.3s ease;
+    }
+    .product:hover img{transform:scale(1.05)}
+    .product-body{padding:25px}
+    .tag{
+      display:inline-block;padding:8px 16px;border-radius:20px;
+      background:var(--earth-2);color:white;font-size:12px;
+      font-weight:600;margin-bottom:15px;
+    }
+    .product h4{margin:0 0 10px;color:var(--earth-1);font-size:18px}
+    .product p{color:var(--muted);font-size:14px;line-height:1.5}
+
+    /* About */
+    .about{
+      display:grid;grid-template-columns:1fr 450px;
+      gap:60px;align-items:center;
+    }
+    .about-content h3{
+      color:var(--earth-1);font-size:24px;margin:0 0 20px;
+    }
+    .about-content p{
+      color:var(--muted);margin:0 0 25px;font-size:16px;
+      line-height:1.7;
+    }
+    .about-list{
+      list-style:none;padding:0;margin:0;
+    }
+    .about-list li{
+      padding:12px 0;color:var(--muted);
+      border-bottom:1px solid #f0f0f0;
+      position:relative;padding-left:30px;
+    }
+    .about-list li::before{
+      content:'✓';position:absolute;left:0;
+      color:var(--green-1);font-weight:bold;
+    }
+    .about-image{
+      border-radius:20px;overflow:hidden;
+      box-shadow:var(--shadow-heavy);
+    }
+    .about-image img{
+      width:100%;height:100%;object-fit:cover;display:block;
+    }
+
+    /* Markets */
+    .markets-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;margin-top:40px;
+    }
+    .market-card{
+      background:white;padding:30px 20px;border-radius:16px;
+      box-shadow:var(--shadow-light);text-align:center;
+      transition:all 0.3s ease;
+    }
+    .market-card:hover{
+      transform:translateY(-4px);box-shadow:var(--shadow-medium);
+    }
+    .market-icon{
+      font-size:32px;margin-bottom:15px;color:var(--green-1);
+    }
+    .market-card h4{
+      margin:0;color:var(--earth-1);font-size:16px;
+    }
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .contact-card{
+      background:linear-gradient(180deg,white,#fffaf4);
+      padding:40px;border-radius:20px;
+      box-shadow:var(--shadow-light);
+    }
+    .contact-card h3{
+      margin:0 0 20px;color:var(--earth-1);font-size:24px;
+    }
+    .contact-info{margin:30px 0}
+    .contact-info p{
+      margin:15px 0;color:var(--muted);
+      display:flex;align-items:center;gap:12px;
+    }
+    .contact-info i{
+      color:var(--green-1);width:20px;
+    }
+    form input, form textarea{
+      width:100%;padding:16px;border-radius:12px;
+      border:2px solid #e6e0d6;margin-bottom:16px;
+      font-family:inherit;font-size:14px;
+      transition:border-color 0.3s ease;
+    }
+    form input:focus, form textarea:focus{
+      outline:none;border-color:var(--green-1);
+    }
+    form button{
+      background:var(--green-1);color:white;
+      padding:16px 24px;border-radius:12px;border:0;
+      font-weight:600;font-size:16px;cursor:pointer;
+      transition:all 0.3s ease;width:100%;
+    }
+    form button:hover{
+      background:var(--green-2);transform:translateY(-2px);
+    }
+    .map-container{
+      margin-top:20px;border-radius:12px;overflow:hidden;
+      box-shadow:var(--shadow-light);
+    }
+
+    /* Footer */
+    footer{
+      padding:60px 0 30px;
+      background:linear-gradient(180deg,rgba(255,255,255,0),white);
+      border-top:1px solid #efe8dd;
+    }
+    .footer-content{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;
+      margin-bottom:40px;
+    }
+    .footer-section h4{
+      color:var(--earth-1);margin:0 0 20px;font-size:18px;
+    }
+    .footer-section p, .footer-section a{
+      color:var(--muted);margin:8px 0;
+      transition:color 0.3s ease;
+    }
+    .footer-section a:hover{color:var(--green-1)}
+    .footer-bottom{
+      text-align:center;padding-top:30px;
+      border-top:1px solid #f0f0f0;
+      color:var(--muted);
+    }
+    .social-links{
+      display:flex;gap:15px;margin-top:20px;
+    }
+    .social-links a{
+      width:40px;height:40px;border-radius:10px;
+      background:var(--accent);display:flex;
+      align-items:center;justify-content:center;
+      color:var(--earth-1);transition:all 0.3s ease;
+    }
+    .social-links a:hover{
+      background:var(--green-1);color:white;
+      transform:translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .hero{grid-template-columns:1fr;gap:40px;text-align:center}
+      .hero-left h1{font-size:40px}
+      .about{grid-template-columns:1fr;gap:40px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-content{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:768px){
+      .nav ul{display:none}
+      .menu-toggle{display:block}
+      .hero{padding:60px 0}
+      .hero-left h1{font-size:32px}
+      .services{grid-template-columns:1fr}
+      .products{grid-template-columns:1fr}
+      .card-stats{flex-direction:column}
+      .hero-cta{flex-direction:column}
+      .footer-content{grid-template-columns:1fr}
+      section{padding:60px 0}
+    }
+    @media (max-width:480px){
+      .container{padding:0 15px}
+      .hero-left h1{font-size:28px}
+      .section-title{font-size:28px}
+      .contact-card{padding:25px}
+    }
+
+    /* Animations */
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .fade-in{animation:fadeInUp 0.6s ease-out}
+
+    /* Mobile menu */
+    .mobile-menu{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:white;box-shadow:var(--shadow-medium);
+      border-radius:0 0 16px 16px;
+    }
+    .mobile-menu.active{display:block}
+    .mobile-menu ul{
+      flex-direction:column;padding:20px;gap:0;
+    }
+    .mobile-menu ul li{
+      width:100%;border-bottom:1px solid #f0f0f0;
+    }
+    .mobile-menu ul li a{
+      display:block;padding:15px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/cultiagro_logo.png" alt="Cultiagro Logo" style="height:50px;width:auto;">
+        <div style="margin-left:10px;">
+          <div class="brand-text">Cultiagro</div>
+          <div class="brand-subtitle">Importação • Exportação • Logística</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#mercados">Mercados</a></li>
+          <li><a href="#contato" class="cta">Contato</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="mobile-menu" id="mobileMenu">
+          <ul>
+            <li><a href="#home" onclick="closeMenu()">Início</a></li>
+            <li><a href="#produtos" onclick="closeMenu()">Produtos</a></li>
+            <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+            <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+            <li><a href="#mercados" onclick="closeMenu()">Mercados</a></li>
+            <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Conectando grãos e alimentos ao mercado global</h1>
+        <p>Soluções completas de comércio exterior, logística e qualidade para exportadores e importadores do agronegócio brasileiro.</p>
+        <div class="hero-cta">
+          <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+          <a href="#produtos" class="btn-outline">Ver Produtos</a>
+        </div>
+        <div class="card-stats">
+          <div class="stat">
+            <div class="stat-number">+50</div>
+            <div class="stat-label">Países atendidos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">+200K</div>
+            <div class="stat-label">Toneladas negociadas</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">25</div>
+            <div class="stat-label">Anos de experiência</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="images/colheita_soja.jpg" alt="Colheita de soja - Campo dourado com máquinas agrícolas">
+      </div>
+    </section>
+
+    <section id="servicos">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <p class="section-subtitle">Oferecemos soluções completas para o comércio internacional de grãos e alimentos, desde a origem até o destino final.</p>
+      <div class="grid services">
+        <div class="service">
+          <div class="service-icon" style="background:linear-gradient(135deg,var(--green-2),var(--green-1));color:white">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3>Comércio Internacional</h3>
+          <p>Compra e venda de grãos com contratos seguros, hedge cambial e gestão completa de riscos comerciais.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon" style="background:linear-gradient(135deg,var(--earth-2),var(--earth-1));color:white">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3>Logística & Transporte</h3>
+          <p>Coordenação de frete rodoviário, ferroviário e marítimo, incluindo rastreabilidade e seguro de cargas.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon" style="background:linear-gradient(135deg,var(--accent),#fff);color:var(--earth-1)">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Controle de Qualidade</h3>
+          <p>Amostragem, análises laboratoriais e certificações fitossanitárias para exportação com padrões internacionais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos">
+      <h2 class="section-title">Produtos</h2>
+      <p class="section-subtitle">Comercializamos os principais grãos e alimentos do agronegócio brasileiro com qualidade certificada.</p>
+      <div class="grid products">
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.25_c9e9bfa8.jpg" alt="Soja em grão">
+          <div class="product-body">
+            <span class="tag">Soja</span>
+            <h4>Soja em Grão</h4>
+            <p><strong>Origem:</strong> Brasil • <strong>Classificação:</strong> Sementes comerciais • <strong>Embalagem:</strong> A granel ou ensacada</p>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.22_ee35d901.jpg" alt="Milho em grão">
+          <div class="product-body">
+            <span class="tag">Milho</span>
+            <h4>Milho em Grão</h4>
+            <p><strong>Origem:</strong> Brasil • <strong>Uso:</strong> Consumo humano e ração animal • <strong>Disponibilidade:</strong> Por safra</p>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.24_d0ac400d.jpg" alt="Trigo em grão">
+          <div class="product-body">
+            <span class="tag">Trigo</span>
+            <h4>Trigo</h4>
+            <p><strong>Origem:</strong> Múltiplas regiões • <strong>Atendimento:</strong> Demanda para moagem e indústria alimentícia</p>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.23_e445e7c4.jpg" alt="Outros grãos">
+          <div class="product-body">
+            <span class="tag">Outros</span>
+            <h4>Outros Grãos</h4>
+            <p><strong>Produtos:</strong> Arroz, feijão, café • <strong>Especialidade:</strong> Produtos orgânicos e especiais</p>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.26_f1c67598.jpg" alt="Alimentos processados">
+          <div class="product-body">
+            <span class="tag">Processados</span>
+            <h4>Alimentos Processados</h4>
+            <p><strong>Produtos:</strong> Farelos, óleos vegetais • <strong>Destino:</strong> Indústria alimentícia e ração animal</p>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="images/ImagemdoWhatsAppde2025-08-26à(s)11.17.25_70b05136.jpg" alt="Produtos especiais">
+          <div class="product-body">
+            <span class="tag">Especiais</span>
+            <h4>Produtos Especiais</h4>
+            <p><strong>Linha:</strong> Orgânicos certificados • <strong>Mercado:</strong> Premium e sustentável</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2 class="section-title">Sobre a Cultiagro</h2>
+      <div class="about">
+        <div class="about-content">
+          <h3>Tradição e Inovação no Agronegócio</h3>
+          <p>Com mais de duas décadas de experiência, a Cultiagro conecta produtores brasileiros aos mercados globais com transparência, segurança e eficiência. Nossa presença em portos estratégicos e relacionamento sólido com parceiros internacionais garantem operações bem-sucedidas.</p>
+          <p>Atuamos em toda a cadeia produtiva — do campo ao navio — assegurando conformidade fitossanitária, contratos claros e logística otimizada para nossos clientes.</p>
+          <ul class="about-list">
+            <li><strong>Missão:</strong> Facilitar o comércio internacional de alimentos com responsabilidade e sustentabilidade</li>
+            <li><strong>Visão:</strong> Ser referência em qualidade e logística no agronegócio brasileiro</li>
+            <li><strong>Valores:</strong> Transparência, segurança, sustentabilidade e excelência operacional</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="images/logistica_agronegocio.webp" alt="Equipe trabalhando no agronegócio">
+        </div>
+      </div>
+    </section>
+
+    <section id="mercados">
+      <h2 class="section-title">Mercados de Atuação</h2>
+      <p class="section-subtitle">Presença global com foco em mercados estratégicos para o agronegócio brasileiro.</p>
+      <div class="markets-grid">
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-flag-usa"></i>
+          </div>
+          <h4>América do Norte</h4>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h4>América Latina</h4>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <h4>Europa</h4>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-yin-yang"></i>
+          </div>
+          <h4>Ásia</h4>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-globe-africa"></i>
+          </div>
+          <h4>África</h4>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h4>Oceania</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2 class="section-title">Fale Conosco</h2>
+      <p class="section-subtitle">Entre em contato para discutir suas necessidades de importação e exportação.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Entre em contato</h3>
+          <p>Preencha o formulário ao lado ou entre em contato diretamente através dos nossos canais.</p>
+          
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Rua Joaquim Nabuco, nº 541, sala 901 a 911 e 1502 a 1511, Edifício Empresarial Trade Center Dom Campelo, bairro Centro, Petrolina/PE, CEP 56.302-140</p>
+            <p><i class="fas fa-id-card"></i> CNPJ: 62.019.544/0001-52</p>
+            <p><i class="fas fa-phone"></i> +55 (87) 9 9996-5441</p>
+            <p><i class="fas fa-envelope"></i> comercial@cultiagro.com.br</p>
+            <p><i class="fas fa-clock"></i> Seg - Sex: 8:00 - 18:00</p>
+          </div>
+
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/cultiv_agroltda" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          </div>
+
+          <div class="map-container">
+            <iframe 
+              title="Localização AgroTrade" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.1234567890123!2d-38.534!3d-3.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQzJzI5LjEiUyA4wrAzMic0Mi4yIl0!5e0!3m2!1spt-BR!2sbr!4v0000000000000" 
+              width="100%" 
+              height="200" 
+              style="border:0" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <h3>Envie sua mensagem</h3>
+          <form onsubmit="return handleSubmit(event)">
+            <input type="text" name="nome" placeholder="Nome completo *" required>
+            <input type="email" name="email" placeholder="E-mail *" required>
+            <input type="text" name="empresa" placeholder="Empresa">
+            <input type="tel" name="telefone" placeholder="Telefone">
+            <textarea name="mensagem" rows="6" placeholder="Descreva sua necessidade *" required></textarea>
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Cultiagro</h4>
+          <p>Conectando o agronegócio brasileiro aos mercados globais com excelência e sustentabilidade.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/cultiv_agroltda" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <a href="#produtos">Produtos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#mercados">Mercados</a>
+          <a href="#contato">Contato</a>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Fortaleza - CE, Brasil</p>
+          <p><i class="fas fa-phone"></i> +55 (85) 4000-0000</p>
+          <p><i class="fas fa-envelope"></i> comercial@cultiagro.com.br</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Cultiagro • Todos os direitos reservados • Desenvolvido com sustentabilidade</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(){
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
+    }
+
+    function closeMenu(){
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.remove('active');
+    }
+
+    // Form submission
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      const nome = formData.get('nome');
+      const email = formData.get('email');
+      const empresa = formData.get('empresa') || 'Não informado';
+      const telefone = formData.get('telefone') || 'Não informado';
+      const mensagem = formData.get('mensagem');
+      
+      // Create email content
+      const subject = encodeURIComponent(`Contato do site - ${nome}`);
+      const body = encodeURIComponent(
+        `Nome: ${nome}\n` +
+        `E-mail: ${email}\n` +
+        `Empresa: ${empresa}\n` +
+        `Telefone: ${telefone}\n\n` +
+        `Mensagem:\n${mensagem}`
+      );
+      
+      // Open email client
+      window.location.href = `mailto:comercial@cultiagro.com.br?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      alert('Obrigado pelo contato! Seu cliente de e-mail será aberto para enviar a mensagem.');
+      
+      return false;
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        closeMenu(); // Close mobile menu if open
+      });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(217,199,166,0.95)';
+        header.style.backdropFilter = 'blur(15px)';
+      } else {
+        header.style.background = 'linear-gradient(90deg,rgba(217,199,166,0.9),rgba(255,255,255,0.95))';
+        header.style.backdropFilter = 'blur(10px)';
+      }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.service, .product, .stat, .market-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça a história, missão e valores da AgroTrade. Mais de 25 anos conectando o agronegócio brasileiro aos mercados globais.">
+  <meta name="keywords" content="sobre agrotrade, história empresa, missão visão valores, agronegócio brasileiro">
+  <title>Sobre Nós • Cultiagro - Importação & Exportação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#FAF7F2;
+      --earth-1:#8B5E3C; /* marrom do logo */
+      --earth-2:#A68A6A; /* marrom claro da espiga */
+      --green-1:#4A7C3F; /* verde do logo */
+      --green-2:#6FA66F; /* verde médio */
+      --accent:#D9C7A6; /* tons terrosos claros */
+      --muted:#6B6B6B;
+      --container:1200px;
+      --shadow-light: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-medium: 0 8px 30px rgba(0,0,0,0.08);
+      --shadow-heavy: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);color:#1b1b1b;line-height:1.6;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none;transition:all 0.3s ease}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    /* Header - Same as index */
+    header{
+      background:linear-gradient(90deg,rgba(217,199,166,0.9),rgba(255,255,255,0.95));
+      backdrop-filter:blur(10px);box-shadow:var(--shadow-light);
+      position:sticky;top:0;z-index:50;transition:all 0.3s ease;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:50px;height:50px;border-radius:12px;
+      background:linear-gradient(135deg,var(--green-1),var(--earth-1));
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:18px;box-shadow:var(--shadow-light);
+    }
+    .brand-text{font-weight:700;font-size:20px;color:var(--earth-1)}
+    .brand-subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+    nav ul{display:flex;gap:24px;align-items:center;margin:0;padding:0;list-style:none}
+    nav ul li a{
+      padding:8px 16px;border-radius:8px;font-weight:500;transition:all 0.3s ease;
+    }
+    nav ul li a:hover, nav ul li a.active{
+      background:rgba(47,107,58,0.1);color:var(--green-1);
+    }
+    .cta{
+      background:var(--green-1);color:white;padding:12px 20px;
+      border-radius:10px;font-weight:600;box-shadow:var(--shadow-light);
+      transition:all 0.3s ease;
+    }
+    .cta:hover{
+      background:var(--green-2);transform:translateY(-2px);box-shadow:var(--shadow-medium);
+    }
+
+    /* Page Header */
+    .page-header{
+      padding:100px 0 60px;text-align:center;
+      background:linear-gradient(135deg,rgba(47,107,58,0.05),rgba(124,90,58,0.05));
+    }
+    .page-header h1{
+      font-size:48px;margin:0 0 20px;color:var(--earth-1);font-weight:700;
+    }
+    .page-header p{
+      font-size:20px;color:var(--muted);max-width:600px;margin:0 auto;
+    }
+
+    /* Content Sections */
+    section{padding:80px 0}
+    .section-title{
+      font-size:36px;margin:0 0 30px;color:var(--earth-1);font-weight:700;
+    }
+    .section-subtitle{
+      font-size:18px;color:var(--muted);margin:0 0 40px;line-height:1.7;
+    }
+
+    /* Timeline */
+    .timeline{
+      position:relative;padding:40px 0;
+    }
+    .timeline::before{
+      content:'';position:absolute;left:50%;top:0;bottom:0;
+      width:4px;background:linear-gradient(180deg,var(--green-1),var(--earth-1));
+      transform:translateX(-50%);
+    }
+    .timeline-item{
+      display:flex;align-items:center;margin:40px 0;position:relative;
+    }
+    .timeline-item:nth-child(even){flex-direction:row-reverse}
+    .timeline-content{
+      background:white;padding:30px;border-radius:16px;
+      box-shadow:var(--shadow-light);width:45%;position:relative;
+    }
+    .timeline-item:nth-child(even) .timeline-content{margin-right:10%}
+    .timeline-item:nth-child(odd) .timeline-content{margin-left:10%}
+    .timeline-year{
+      position:absolute;left:50%;transform:translateX(-50%);
+      background:var(--green-1);color:white;padding:10px 20px;
+      border-radius:20px;font-weight:700;z-index:2;
+    }
+    .timeline-content h3{
+      margin:0 0 15px;color:var(--earth-1);font-size:20px;
+    }
+    .timeline-content p{
+      margin:0;color:var(--muted);line-height:1.6;
+    }
+
+    /* Values Grid */
+    .values-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;margin:40px 0;
+    }
+    .value-card{
+      background:white;padding:40px 30px;border-radius:20px;
+      box-shadow:var(--shadow-light);text-align:center;
+      transition:all 0.3s ease;position:relative;overflow:hidden;
+    }
+    .value-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;
+      height:4px;background:linear-gradient(90deg,var(--green-1),var(--earth-1));
+    }
+    .value-card:hover{
+      transform:translateY(-8px);box-shadow:var(--shadow-heavy);
+    }
+    .value-icon{
+      width:80px;height:80px;border-radius:20px;
+      background:linear-gradient(135deg,var(--green-2),var(--green-1));
+      display:flex;align-items:center;justify-content:center;
+      font-size:32px;color:white;margin:0 auto 20px;
+      box-shadow:var(--shadow-light);
+    }
+    .value-card h3{
+      margin:0 0 15px;color:var(--earth-1);font-size:22px;
+    }
+    .value-card p{
+      margin:0;color:var(--muted);line-height:1.6;
+    }
+
+    /* Team Section */
+    .team-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;margin:40px 0;
+    }
+    .team-member{
+      background:white;border-radius:20px;overflow:hidden;
+      box-shadow:var(--shadow-light);transition:all 0.3s ease;
+    }
+    .team-member:hover{
+      transform:translateY(-8px);box-shadow:var(--shadow-heavy);
+    }
+    .team-photo{
+      width:100%;height:250px;background:linear-gradient(135deg,var(--accent),var(--earth-2));
+      display:flex;align-items:center;justify-content:center;
+      font-size:48px;color:white;
+    }
+    .team-info{
+      padding:25px;text-align:center;
+    }
+    .team-info h4{
+      margin:0 0 5px;color:var(--earth-1);font-size:18px;
+    }
+    .team-info .role{
+      color:var(--green-1);font-weight:600;margin:0 0 15px;
+    }
+    .team-info p{
+      margin:0;color:var(--muted);font-size:14px;line-height:1.5;
+    }
+
+    /* Stats Section */
+    .stats-section{
+      background:linear-gradient(135deg,rgba(47,107,58,0.05),rgba(124,90,58,0.05));
+      padding:80px 0;margin:80px 0;border-radius:20px;
+    }
+    .stats-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:40px;text-align:center;
+    }
+    .stat-item{
+      background:white;padding:40px 20px;border-radius:16px;
+      box-shadow:var(--shadow-light);transition:all 0.3s ease;
+    }
+    .stat-item:hover{
+      transform:translateY(-4px);box-shadow:var(--shadow-medium);
+    }
+    .stat-number{
+      font-size:36px;font-weight:700;color:var(--green-1);margin:0 0 10px;
+    }
+    .stat-label{
+      color:var(--muted);font-size:16px;margin:0;
+    }
+
+    /* Two Column Layout */
+    .two-column{
+      display:grid;grid-template-columns:1fr 1fr;gap:60px;
+      align-items:center;margin:60px 0;
+    }
+    .content-block h3{
+      font-size:28px;margin:0 0 20px;color:var(--earth-1);
+    }
+    .content-block p{
+      margin:0 0 20px;color:var(--muted);line-height:1.7;
+    }
+    .content-block ul{
+      list-style:none;padding:0;margin:20px 0;
+    }
+    .content-block ul li{
+      padding:10px 0;color:var(--muted);
+      border-bottom:1px solid #f0f0f0;
+      position:relative;padding-left:30px;
+    }
+    .content-block ul li::before{
+      content:'✓';position:absolute;left:0;
+      color:var(--green-1);font-weight:bold;
+    }
+    .image-block{
+      border-radius:20px;overflow:hidden;box-shadow:var(--shadow-heavy);
+    }
+    .image-block img{
+      width:100%;height:100%;object-fit:cover;display:block;
+    }
+
+    /* Footer - Same as index */
+    footer{
+      padding:60px 0 30px;
+      background:linear-gradient(180deg,rgba(255,255,255,0),white);
+      border-top:1px solid #efe8dd;
+    }
+    .footer-content{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:40px;
+    }
+    .footer-section h4{color:var(--earth-1);margin:0 0 20px;font-size:18px}
+    .footer-section p, .footer-section a{
+      color:var(--muted);margin:8px 0;transition:color 0.3s ease;
+    }
+    .footer-section a:hover{color:var(--green-1)}
+    .footer-bottom{
+      text-align:center;padding-top:30px;border-top:1px solid #f0f0f0;color:var(--muted);
+    }
+    .social-links{display:flex;gap:15px;margin-top:20px}
+    .social-links a{
+      width:40px;height:40px;border-radius:10px;background:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--earth-1);transition:all 0.3s ease;
+    }
+    .social-links a:hover{
+      background:var(--green-1);color:white;transform:translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .two-column{grid-template-columns:1fr;gap:40px}
+      .timeline::before{left:30px}
+      .timeline-item{flex-direction:column!important;align-items:flex-start}
+      .timeline-content{width:100%;margin-left:60px!important;margin-right:0!important}
+      .timeline-year{left:30px;transform:translateX(-50%)}
+      .footer-content{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:768px){
+      .page-header h1{font-size:36px}
+      .page-header{padding:80px 0 40px}
+      section{padding:60px 0}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-content{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      .container{padding:0 15px}
+      .page-header h1{font-size:28px}
+      .section-title{font-size:28px}
+      .stats-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/cultiagro_logo.png" alt="Cultiagro Logo" style="height:50px;width:auto;">
+        <div style="margin-left:10px;">
+          <div class="brand-text">Cultiagro</div>
+          <div class="brand-subtitle">Importação • Exportação • Logística</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="sobre.html" class="active">Sobre</a></li>
+          <li><a href="mercados.html">Mercados</a></li>
+          <li><a href="contato.html" class="cta">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Sobre a Cultiagro</h1>
+      <p>Mais de 25 anos conectando o agronegócio brasileiro aos mercados globais com excelência, sustentabilidade e inovação.</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <section>
+      <h2 class="section-title">Nossa História</h2>
+      <p class="section-subtitle">Uma trajetória de crescimento e inovação no agronegócio brasileiro, sempre focada na excelência e sustentabilidade.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1998</div>
+          <div class="timeline-content">
+          <h3>Fundação da Empresa</h3>
+          <p>Início das atividades com foco na exportação de soja e milho para mercados sul-americanos, estabelecendo as bases para o crescimento futuro.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2003</div>
+          <div class="timeline-content">
+            <h3>Expansão Internacional</h3>
+            <p>Abertura de operações para Europa e Ásia, diversificando o portfólio de produtos e estabelecendo parcerias estratégicas globais.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2008</div>
+          <div class="timeline-content">
+            <h3>Certificações de Qualidade</h3>
+            <p>Obtenção das principais certificações internacionais de qualidade e sustentabilidade, fortalecendo nossa posição no mercado global.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2015</div>
+          <div class="timeline-content">
+            <h3>Inovação Tecnológica</h3>
+            <p>Implementação de sistemas avançados de rastreabilidade e gestão logística, otimizando processos e garantindo transparência total.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <h3>Sustentabilidade</h3>
+            <p>Lançamento do programa de sustentabilidade corporativa, com foco em práticas ambientalmente responsáveis e agricultura regenerativa.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <h3>Liderança no Setor</h3>
+            <p>Consolidação como uma das principais empresas de trading do agronegócio brasileiro, com presença em mais de 50 países.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-section">
+      <div class="container">
+        <h2 class="section-title" style="text-align:center;margin-bottom:60px">Números que Falam por Si</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Anos de Experiência</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Países Atendidos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">200K+</div>
+            <div class="stat-label">Toneladas/Ano</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Clientes Ativos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Escritórios Globais</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfação do Cliente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="section-title">Missão, Visão e Valores</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Nossa Missão</h3>
+          <p>Facilitar o comércio internacional de grãos e alimentos, conectando produtores brasileiros aos mercados globais com responsabilidade, transparência e sustentabilidade.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Nossa Visão</h3>
+          <p>Ser reconhecida como a principal referência em qualidade, inovação e logística no agronegócio brasileiro, contribuindo para a segurança alimentar mundial.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Nossos Valores</h3>
+          <p>Transparência em todas as operações, segurança nos processos, sustentabilidade ambiental, excelência operacional e compromisso com nossos parceiros.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-column">
+        <div class="content-block">
+        <h3>Compromisso com a Excelência</h3>
+        <p>Na Cultiagro, acreditamos que a excelência não é um destino, mas uma jornada contínua. Nosso compromisso vai além da simples comercialização de grãos - somos facilitadores de sonhos, conectando o trabalho árduo dos produtores brasileiros às mesas do mundo inteiro.</p>
+          <p>Investimos constantemente em tecnologia, pessoas e processos para garantir que cada operação seja executada com a máxima eficiência e transparência.</p>
+          <ul>
+            <li>Certificações internacionais de qualidade e sustentabilidade</li>
+            <li>Sistemas avançados de rastreabilidade e monitoramento</li>
+            <li>Equipe especializada com décadas de experiência</li>
+            <li>Parcerias estratégicas em todos os continentes</li>
+            <li>Compromisso com práticas ambientalmente responsáveis</li>
+          </ul>
+        </div>
+        <div class="image-block">
+          <img src="images/logistica_agronegocio_desafios.webp" alt="Equipe AgroTrade trabalhando">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Nossa Liderança</h2>
+      <p class="section-subtitle">Uma equipe experiente e dedicada, com profundo conhecimento do agronegócio e dos mercados internacionais.</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-photo">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h4>Carlos Eduardo Silva</h4>
+            <div class="role">CEO & Fundador</div>
+            <p>Mais de 30 anos de experiência no agronegócio. Formado em Engenharia Agronômica pela ESALQ-USP, com MBA em Gestão Internacional.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h4>Ana Paula Rodrigues</h4>
+            <div class="role">Diretora Comercial</div>
+            <p>Especialista em mercados internacionais com 20 anos de experiência. Responsável pelas operações comerciais globais da empresa.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h4>Roberto Santos</h4>
+            <div class="role">Diretor de Logística</div>
+            <p>Expert em logística internacional e gestão de supply chain. Coordena todas as operações de transporte e armazenagem da empresa.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="team-info">
+            <h4>Mariana Costa</h4>
+            <div class="role">Diretora de Qualidade</div>
+            <p>Responsável pelos programas de qualidade e sustentabilidade. Garante que todos os produtos atendam aos mais altos padrões internacionais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-column">
+        <div class="image-block">
+          <img src="images/exportacao_alimentos_brasil.jpg" alt="Sustentabilidade no agronegócio">
+        </div>
+        <div class="content-block">
+          <h3>Sustentabilidade e Responsabilidade</h3>
+          <p>Acreditamos que o sucesso empresarial deve caminhar lado a lado com a responsabilidade ambiental e social. Por isso, desenvolvemos práticas sustentáveis em todas as nossas operações.</p>
+          <p>Nosso programa de sustentabilidade abrange desde a seleção de fornecedores até a otimização de rotas logísticas, sempre buscando minimizar nosso impacto ambiental.</p>
+          <ul>
+            <li>Apoio à agricultura regenerativa e práticas sustentáveis</li>
+            <li>Redução da pegada de carbono em operações logísticas</li>
+            <li>Programas de desenvolvimento social nas comunidades rurais</li>
+            <li>Certificações ambientais e de responsabilidade social</li>
+            <li>Investimento em tecnologias limpas e eficientes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Cultiagro</h4>
+          <p>Conectando o agronegócio brasileiro aos mercados globais com excelência e sustentabilidade.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/cultiv_agroltda" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <a href="produtos.html">Produtos</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="mercados.html">Mercados</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Rua Joaquim Nabuco, nº 541, sala 901 a 911 e 1502 a 1511, Edifício Empresarial Trade Center Dom Campelo, bairro Centro, Petrolina/PE, CEP 56.302-140</p>
+          <p><i class="fas fa-id-card"></i> CNPJ: 62.019.544/0001-52</p>
+          <p><i class="fas fa-phone"></i> +55 (87) 9 9996-5441</p>
+          <p><i class="fas fa-envelope"></i> comercial@cultiagro.com.br</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Cultiagro • Todos os direitos reservados • Desenvolvido com sustentabilidade</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
